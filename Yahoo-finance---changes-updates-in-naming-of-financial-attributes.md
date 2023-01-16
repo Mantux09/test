@@ -3,12 +3,13 @@ This page is an attempt to assist other yfinance users that come across 'backwar
 
 <feel free to add / update, as applicable>
 
-quarterly_financials.loc['Total Stockholder Equity']  ==> quarterly_balancesheet.loc['Stockholders Equity']
+* quarterly_financials.loc['Total Stockholder Equity']  ==> quarterly_balancesheet.loc['Stockholders Equity']
 
 Other changes in quarterly_balancesheet:
 * 'Cash' -> 'Cash And Cash Equivalents'
 * 'Total Liab' -> 'Total Liabilities Net Minority Interest'
 * 'Short Term Investments'-> 'Other Short Term Investments'
 
-quarterly_cashflow.loc['Capital Expenditures'] ==> 'Capital Expenditure'
-quarterly_cashflow.loc['Total Cash From Operating Activities'] ==> 'Cash Flow From Continuing Operating Activities'
+Changes in quarterly_cashflow:
+* quarterly_cashflow.loc['Capital Expenditures'] ==> 'Capital Expenditure'
+* quarterly_cashflow.loc['Total Cash From Operating Activities'] ==> 'Cash Flow From Continuing Operating Activities'
