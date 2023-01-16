@@ -8,7 +8,7 @@ quarterly_financials.loc['Total Stockholder Equity']  ==> quarterly_balancesheet
 Other changes in quarterly_balancesheet:
 * 'Cash' -> 'Cash And Cash Equivalents'
 * 'Total Liab' -> 'Total Liabilities Net Minority Interest'
-'Short Term Investments'-> '* Other Short Term Investments'
+* 'Short Term Investments'-> 'Other Short Term Investments'
 
 quarterly_cashflow.loc['Capital Expenditures'] ==> 'Capital Expenditure'
 quarterly_cashflow.loc['Total Cash From Operating Activities'] ==> 'Cash Flow From Continuing Operating Activities'
