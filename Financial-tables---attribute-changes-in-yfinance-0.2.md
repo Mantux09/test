@@ -1,5 +1,5 @@
 Purpose:
-This page is an attempt to assist other yfinance users that come across 'backward compatibility' issues due to some financial attributes that either changed names (or moved to other tables) due to changes made by yahoo.
+This page is an attempt to assist other yfinance users that come across 'backward compatibility' issues due to some financial attributes that either changed names or were moved to other tables, due to changes made by yahoo.
 
 <feel free to add / update, as applicable>
 
