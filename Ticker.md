@@ -1,1 +1,0 @@
-`Ticker.history` Fetch price data from Yahoo
