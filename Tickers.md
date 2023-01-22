@@ -7,7 +7,7 @@ download(self, period, interval, start, end, prepost, actions, auto_adjust, repa
 ```
 - parameters
 
-Most parameters are identical to [`Ticker.history`](https://github.com/ranaroussi/yfinance/wiki/TickerBase#history).  
+Most parameters are identical to [`Ticker.history()`](https://github.com/ranaroussi/yfinance/wiki/TickerBase#history).  
 Differences: 
 
 | parameters | description | default value | valid value | 
