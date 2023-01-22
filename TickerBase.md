@@ -1,5 +1,5 @@
 # `history()` 
-
+- descriptions
 Fetch price data for one ticker from Yahoo and make user-friendly.
 - interface
 ```python
@@ -24,10 +24,12 @@ history(self, period, interval, start, end, prepost, actions, auto_adjust, back_
 | debug: bool | Print error messages? | True |  |
 | raise_errors: bool | Allow errors to raise exceptions instead of printing? | False |  |
 
-## `download`
-
+# `download()` (WIP: this method is in `Tickers` class)
+- descriptions
 Fetch price data for many tickers from Yahoo and make user-friendly.
+- interface
 
+- parameters
 ### Parameters
 
 Most parameters are identical to `Ticker.history`. Differences:
