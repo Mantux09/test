@@ -1,30 +1,18 @@
-## `Ticker.history`
-
+# `history()`
+## Definition and Usage
 Fetch price data for one ticker from Yahoo and make user-friendly.
+- interface
+```python
+history(self, period, interval, start, end, prepost, actions, auto_adjust, back_adjust, repair, keepna, proxy, rounding, timeout, debug, raise_errors) -> pd.DataFrame
+```
+- parameters 
 
-### Parameters
-
-#### interval
-str : 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo
-
-Default = 1d
-
-Limits for intraday intervals:
-* 1m - max 7 days within last 30 days
-* up to 90m - max 60 days
-* 60m, 1h - max 730 days (yes 1h is technically < 90m but this what Yahoo does)
-
-#### period
-str : [1d,5d,1mo,3mo,6mo,1y,2y,5y,10y,ytd,max]
-
-Duration of range to fetch. Default = 3mo
-
-Don't mix with start & end
-
-#### start
-Any valid date-like value: str (YYYY-MM-DD), date, datetime, or epoch
-
-Start of range. Default = 1900-01-01 (if period=None)
+| parameters | description | default value | valid value | 
+| :--------: | :-------- | :------: | :-------- | 
+| period : str | Either Use period parameter or use start and end <br> Don't mix with start & end | '1mo' | 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max |
+| interval : str | Intraday data cannot extend last 60 days <br> * 1m - max 7 days within last 30 days <br> * up to 90m - max 60 days <br> * 60m, 1h - max 730 days (yes 1h is technically < 90m but this what Yahoo does)| '1d' | 1m,2m,5m,15m,30m,60m,90m,1h,1d,5d,1wk,1mo,3mo | 
+| start : str | Download start date string, date,_datetime, or epoch. <br> Default is  | 1900-01-01 (if period=None) | 'YYYY-MM-DD' | 
+|  |  |  |  |
 
 #### end
 Any valid date-like value: str (YYYY-MM-DD), date, datetime, or epoch
