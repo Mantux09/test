@@ -11,66 +11,18 @@ history(self, period, interval, start, end, prepost, actions, auto_adjust, back_
 | :--------: | :-------- | :------: | :-------- | 
 | period : str | Either Use period parameter or use start and end <br> Don't mix with start & end | '1mo' | 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max |
 | interval : str | Intraday data cannot extend last 60 days <br> * 1m - max 7 days within last 30 days <br> * up to 90m - max 60 days <br> * 60m, 1h - max 730 days (yes 1h is technically < 90m but this what Yahoo does)| '1d' | 1m,2m,5m,15m,30m,60m,90m,1h,1d,5d,1wk,1mo,3mo | 
-| start : str | Download start date string, date,_datetime, or epoch. <br> Default is  | 1900-01-01 (if period=None) | 'YYYY-MM-DD' | 
-|  |  |  |  |
-
-#### end
-Any valid date-like value: str (YYYY-MM-DD), date, datetime, or epoch
-
-End of range. Default = now (if period=None)
-
-#### prepost
-bool
-
-Include Pre and Post market data in results? Default = False
-
-#### auto_adjust
-bool
-
-Adjust all OHLC for dividends automatically? Default = True
-
-#### back_adjust
-Defunct
-
-#### repair
-bool
-
-Detect problem in price data and repair. Default = False
-
-Problems repaired:
-* very few prices = 0 or NaN
-* volume=0 despite price movement
-* very few prices 100x the rest
-
-#### keepna
-bool
-
-Keep NaN rows returned by Yahoo? Default = False
-
-#### proxy
-str
-
-Optional. Proxy server URL scheme. Default = None
-
-#### rounding
-bool
-
-Optional. Round values using Yahoo-suggested precision? Default = False
-
-#### timeout
-float
-
-Optional. Stop waiting for response after N seconds. Default = 10s
-
-#### debug
-bool
-
-Print error messages? Default = True
-
-#### raise_errors
-bool
-
-Allow errors to raise exceptions instead of printing? Default = False
+| start : str | Download start date string, _datetime, or epoch.  | '1900-01-01' (if period=None) | 'YYYY-MM-DD' | 
+| end: str | Download end date string or _datetime. | 'now' (if period=None) | 'YYYY-MM-DD' |
+| prepost : bool | Include Pre and Post market data in results? | False |  |
+| auto_adjust: bool | Adjust all OHLC automatically? | True |  |
+| back_adjust | Back-adjusted data to mimic true historical prices <br> Defunct | False |  |
+| repair: bool | Detect problem in price data and repair. <br> Problems repaired: <br> * very few prices = 0 or NaN <br> * volume=0 despite price movement <br> * very few prices 100x the rest | False ||
+| keepna: bool | Keep NaN rows returned by Yahoo?  | False ||
+| proxy: str | Optional. Proxy server URL scheme. | None |  |
+| rounding: bool | Optional. Round values using Yahoo-suggested precision? | False |  |
+| timeout: float | Optional. Stop waiting for response after N seconds. | 10 | None, number, or fraction. e.g. 0.01 |
+| debug: bool | Print error messages? | True |  |
+| raise_errors: bool | Allow errors to raise exceptions instead of printing? | False |  |
 
 ## `download`
 
