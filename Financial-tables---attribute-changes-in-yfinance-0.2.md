@@ -13,7 +13,7 @@ This page is an attempt to assist other yfinance users that come across 'backwar
 * 'Capital Expenditures' -> 'Capital Expenditure'
 * 'Total Cash From Operating Activities' -> 'Cash Flow From Continuing Operating Activities'
 
-### additional attributes that changed once moving to 0.2.7:
+### additional attributes that changed once moving to 0.2.6:
 * Ticker.info['marketCap'] -> Ticker.fast_info['market_cap']
 * Ticker.info['fiftyTwoWeekLow'] -> Ticker.fast_info['year_low']
 * Ticker.info['fiftyTwoWeekHigh'] -> Ticker.fast_info['year_high']
