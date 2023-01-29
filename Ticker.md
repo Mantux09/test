@@ -1,5 +1,6 @@
 # `history()` 
-- Fetch price data for one ticker from Yahoo and make user-friendly
+
+Fetch price data for one ticker from Yahoo and make user-friendly.
 
 ## Interface
 ```python
