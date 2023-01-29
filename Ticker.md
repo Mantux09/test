@@ -1,6 +1,11 @@
 # `history()` 
 - Fetch price data for one ticker from Yahoo and make user-friendly
 
+## Interface
+```python
+yf.Ticker(symbol).history(...) -> pd.DataFrame
+```
+
 ## Parameters
 
 | Parameter  | Description | Default | Valid values | 
