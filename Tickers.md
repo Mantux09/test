@@ -1,12 +1,12 @@
 # `download()`
 Fetch price data for many tickers from Yahoo and make user-friendly.
 
-# Interface
+## Interface
 ```python
 yf.download(tickers, ...) -> pd.DataFrame
 ```
 
-# Parameters
+## Parameters
 | Parameter  | Description | Default | Valid values | 
 | :--------: | :-------- | :------: | :-------- | 
 | tickers : str, list | List of tickers to download |  | |
