@@ -30,3 +30,5 @@ This page is an attempt to assist other yfinance users that come across 'backwar
 * Ticker.info['twoHundredDayAverage'] -> Ticker.fast_info['two_hundred_day_average']
 
 * Ticker.info['regularMarketPrice'] -> Ticker.history_metadata['two_hundred_day_average'] # need to call `Ticker.history(period='1d')` first in order to get access to history_metadata
+
+.analysis -> .earnings_trend
