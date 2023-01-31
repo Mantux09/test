@@ -5,6 +5,7 @@ This page is an attempt to assist other yfinance users that come across 'backwar
 * 'Total Stockholder Equity' -> 'Stockholders Equity' and moved to `quarterly_balancesheet`
 * 'Ebit' -> 'EBIT`
 * 'Income Before Tax' -> 'Pretax Income`
+* 'Net Income Applicable To Common Shares' -> 'Net Income Common Stockholders`
 
 ### quarterly_balancesheet:
 * 'Cash' -> 'Cash And Cash Equivalents'
