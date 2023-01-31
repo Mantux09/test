@@ -3,6 +3,7 @@ This page is an attempt to assist other yfinance users that come across 'backwar
 
 ### quarterly_financials
 * 'Total Stockholder Equity' -> 'Stockholders Equity' and moved to `quarterly_balancesheet`
+* 'Ebit' -> 'EBIT`
 
 ### quarterly_balancesheet:
 * 'Cash' -> 'Cash And Cash Equivalents'
