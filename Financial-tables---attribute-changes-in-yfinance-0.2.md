@@ -4,11 +4,14 @@ This page is an attempt to assist other yfinance users that come across 'backwar
 ### quarterly_financials
 * 'Total Stockholder Equity' -> 'Stockholders Equity' and moved to `quarterly_balancesheet`
 * 'Ebit' -> 'EBIT`
+* 'Income Before Tax' -> 'Pretax Income`
 
 ### quarterly_balancesheet:
 * 'Cash' -> 'Cash And Cash Equivalents'
 * 'Total Liab' -> 'Total Liabilities Net Minority Interest'
 * 'Short Term Investments'-> 'Other Short Term Investments'
+* 'Total Current Liabilities'-> 'Current Liabilities'
+* 'Total Current Assets'-> 'Current Assets'
 
 ### quarterly_cashflow:
 * 'Capital Expenditures' -> 'Capital Expenditure'
