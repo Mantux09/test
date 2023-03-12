@@ -26,7 +26,6 @@ yf.download(tickers, ...) -> pd.DataFrame
 | proxy: str | Optional. Proxy server URL scheme. | None |  |
 | timeout: float,None | Optional. Stop waiting for response after N seconds. | 10 |  |
 | progress : bool | Print progress bar. | True |  |
-| debug: bool | Print error messages? | True |  |
 | raise_errors: bool | Raise errors as exceptions instead of printing? | False |  |
 
 ## Returns
