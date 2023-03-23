@@ -1,0 +1,1 @@
+See [#1084](https://github.com/ranaroussi/yfinance/discussions/1084)
