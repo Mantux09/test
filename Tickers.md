@@ -24,6 +24,7 @@ yf.download(tickers, ...) -> pd.DataFrame
 | ignore_tz : bool | When aligning data from different exchanges, ignore different timezones? | True | |
 | threads : bool, int | How many threads to use for mass downloading. <br> If True, number of threads = CPUs * 2 | True | |
 | proxy: str | Optional. Proxy server URL scheme. | None |  |
+| session: Session | Optional. Override default `requests` session | None |  |
 | timeout: float,None | Optional. Stop waiting for response after N seconds. | 10 |  |
 | progress : bool | Print progress bar. | True |  |
 
