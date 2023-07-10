@@ -18,7 +18,7 @@ yf.Ticker(symbol).history(...) -> pd.DataFrame
 | prepost: bool | Include Pre and Post market data in results? | False |  |
 | auto_adjust: bool | Dividend-adjust all OHLC automatically? | True |  |
 | back_adjust: bool | Deprecated | False |  |
-| repair: bool | Detect problems in price data and repair: <br> * very few prices = 0 or NaN <br> * volume=0 despite price movement <br> * very few prices 100x the rest | False ||
+| repair: bool | Detect problems in price data and repair. [See Wiki page for details](https://github.com/ranaroussi/yfinance/wiki/Price-repair) | False |  |
 | keepna: bool | Keep NaN rows returned by Yahoo?  | False |  |
 | proxy: str | Optional. Proxy server URL scheme. | None |  |
 | rounding: bool | Optional. Round values using Yahoo-suggested precision? | False |  |
