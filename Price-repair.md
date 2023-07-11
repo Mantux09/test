@@ -30,7 +30,7 @@ If price data is clearly missing or corrupt, then reconstructed using smaller in
 
 ![image](https://github.com/ranaroussi/yfinance/assets/96923577/2032052a-11ab-4dca-8a7c-e99fcd3952a2)
 
-`COV.DE` missing Volume
+`1COV.DE` missing Volume
 
 ![image](https://github.com/ranaroussi/yfinance/assets/96923577/39ed9634-d441-44a8-a4b7-0a1e186f5c0d)
 
