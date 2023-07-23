@@ -15,6 +15,7 @@ yf.download(tickers, ...) -> pd.DataFrame
 | start: str,dt,int | Range start, inclusive | 99 years ago (if period=None) | 'YYYY-MM-DD', datetime, or epoch | 
 | end: str,dt,int | Range end, exclusive | now (if period=None) | 'YYYY-MM-DD', datetime, or epoch |
 | prepost: bool | Include Pre and Post market data in results? | False |  |
+| actions: bool | Include Dividends and Stock Splits in results? | False |  |
 | auto_adjust: bool | Dividend-adjust all OHLC automatically? | False |  |
 | back_adjust: bool | Deprecated | False |  |
 | repair: bool | Detect problems in price data and repair. [See Wiki page for details](https://github.com/ranaroussi/yfinance/wiki/Price-repair) | False |  |
