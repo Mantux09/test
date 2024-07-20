@@ -28,11 +28,15 @@ If price data is clearly missing or corrupt, then reconstructed using smaller in
 
 `1COV.DE` missing row
 
-![image](https://github.com/ranaroussi/yfinance/assets/96923577/2032052a-11ab-4dca-8a7c-e99fcd3952a2)
+![image](https://github.com/user-attachments/assets/e55da04c-e7a9-48ba-8157-00675e29c6c3)
 
-`1COV.DE` missing Volume
+`1COV.DE` missing Volume, but intraday price changed
 
-![image](https://github.com/ranaroussi/yfinance/assets/96923577/39ed9634-d441-44a8-a4b7-0a1e186f5c0d)
+![image](https://github.com/user-attachments/assets/e01629ed-9658-4a0a-a43c-50b48173829c)
+
+`0316.HK`, but daily close changed
+
+![image](https://github.com/user-attachments/assets/b6085315-3236-4e79-a733-7a9466bb8ecc)
 
 
 # 100x errors
