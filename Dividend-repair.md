@@ -6,4 +6,14 @@ Fix errors in dividends:
 
 Almost all errors I've seen are on London stock exchange (£/pence mixup), but no exchange is safe.
 
-Because (3) relies on price action, detection is best with 1d intervals and worsens with longer intervals (1wk, 1mo).
+Because (3) relies on price action, detection is best with 1d intervals, basically perfect. Accuracy worsens with longer intervals - 1wk, 1mo - and also false positive rate is higher. So for accuracy multiday adjusted-priced, first fetch 1d adjusted prices and aggregate:
+
+```python
+df.loc[df['Stock Splits']==0.0, 'Stock Splits'] = 1.0
+df_wk = df.resample('W').agg({
+    'Open': 'first', 'Low': 'min', 'High': 'max', 'Close': 'last',
+    'Volume': 'sum', 'Dividends': 'sum', 'Stock Splits': 'prod',
+    'Repaired?': 'any'
+    })
+df_wk.loc[df_wk['Stock Splits']==1.0, 'Stock Splits'] = 0.0
+```
