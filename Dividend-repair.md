@@ -6,7 +6,7 @@ Fix errors in dividends:
 
 Almost all errors I've seen are on London stock exchange (£/pence mixup), but no exchange is safe.
 
-Because (3) relies on price action, detection is best with 1d intervals, basically perfect. Accuracy worsens with longer intervals - 1wk, 1mo - and also false positive rate is higher. So for accurate adjusted 1wk/1mo prices, first fetch 1d adjusted prices and resample to 1wk/1mo:
+Because fixing (3) relies on price action, detection is best with 1d intervals - perfect AFAIK. Accuracy worsens with longer intervals - 1wk, 1mo - and also false positive rate is higher. So for accurate adjusted 1wk/1mo prices, first fetch 1d adjusted prices then resample:
 
 ```python
 df = dat.history(interval='1d', auto_adjust=True, ...)
