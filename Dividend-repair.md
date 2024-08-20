@@ -54,6 +54,22 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 2024-06-26 00:00:00+01:00  2.375     2.3572  0.9925     0.0000
 ```
 
+#### Dividend too small
+
+> BVT.L
+
+```
+# ORIGINAL:
+                            Close  Adj Close     Adj  Dividends
+2022-02-03 00:00:00+00:00  0.7534   0.675197  0.8962    0.00001
+2022-02-01 00:00:00+00:00  0.7844   0.702970  0.8962    0.00000
+```
+```
+# REPAIRED:
+                            Close  Adj Close     Adj  Dividends
+2022-02-03 00:00:00+00:00  0.7534   0.675197  0.8962      0.001
+2022-02-01 00:00:00+00:00  0.7844   0.702075  0.8950      0.000
+```
 
 #### Adjusted 2x on day before (clue: Close < Low)
 
