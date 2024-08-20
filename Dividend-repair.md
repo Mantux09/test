@@ -11,7 +11,7 @@ Almost all errors I've seen are on London stock exchange (£/pence mixup), but n
 ### IMPORTANT
 
 Because fixing (3) relies on price action, there is a chance of a "false positive" (FP) - thinking an error exists when data is good.
-FP rate increases with longer intervals, so only 1d intervals are repaired. If you request repair on multiday intervals (weekly etc), then: 1d is fetched from Yahoo, repaired, then resampled.
+FP rate increases with longer intervals, so only 1d intervals are repaired. If you request repair on multiday intervals (weekly etc), then: 1d is fetched from Yahoo, repaired, then resampled. (This also solves Yahoo's flawed way of adjusting multiday)
 
 FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistaking normal price volatility for an ex-div drop 100x bigger than the dividend, causing repair of the "too small" dividend. Either accept the risk, or fetch 1-2 years of prices with at least 3 dividends - then can analyse the dividends together to identify false positives.
 
@@ -23,15 +23,15 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 
 ```
 # ORIGINAL:
-                           Close  Adj Close  Adj  Dividends
-2024-07-08 00:00:00+08:00   4.33       4.33  1.0   0.335715
-2024-07-04 00:00:00+08:00   4.83       4.83  1.0   0.000000
+                           Close  Adj Close  Dividends
+2024-07-08 00:00:00+08:00   4.33       4.33   0.335715
+2024-07-04 00:00:00+08:00   4.83       4.83   0.000000
 ```
 ```
 # REPAIRED:
-                           Close  Adj Close     Adj  Dividends
-2024-07-08 00:00:00+08:00   4.33   4.330000  1.0000   0.335715
-2024-07-04 00:00:00+08:00   4.83   4.494285  0.9305   0.000000
+                           Close  Adj Close  Dividends
+2024-07-08 00:00:00+08:00   4.33   4.330000   0.335715
+2024-07-04 00:00:00+08:00   4.83   4.494285   0.000000
 ```
 
 #### Adjustment too small
@@ -40,15 +40,15 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 
 ```
 # ORIGINAL:
-                           Close  Adj Close     Adj  Dividends
-2024-06-13 00:00:00+01:00  3.185   3.185000  1.0000    0.05950
-2024-06-12 00:00:00+01:00  3.270   3.269405  0.9998    0.00000
+                           Close  Adj Close  Dividends
+2024-06-13 00:00:00+01:00  3.185   3.185000    0.05950
+2024-06-12 00:00:00+01:00  3.270   3.269405    0.00000
 ```
 ```
 # REPAIRED:
-                           Close  Adj Close     Adj  Dividends
-2024-06-13 00:00:00+01:00  3.185   3.185000  1.0000    0.05950
-2024-06-12 00:00:00+01:00  3.270   3.210500  0.9818    0.00000
+                           Close  Adj Close  Dividends
+2024-06-13 00:00:00+01:00  3.185   3.185000    0.05950
+2024-06-12 00:00:00+01:00  3.270   3.210500    0.00000
 ```
 
 #### Duplicate
@@ -76,14 +76,14 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 
 ```
 # ORIGINAL:
-                           Close  Adj Close     Adj  Dividends
-2024-06-27 00:00:00+01:00  2.360     2.3600  1.0000       1.78
-2024-06-26 00:00:00+01:00  2.375     2.3572  0.9925       0.00
+                           Close  Adj Close  Dividends
+2024-06-27 00:00:00+01:00  2.360     2.3600       1.78
+2024-06-26 00:00:00+01:00  2.375     2.3572       0.00
 
 # REPAIRED:
-                           Close  Adj Close     Adj  Dividends
-2024-06-27 00:00:00+01:00  2.360     2.3600  1.0000     0.0178
-2024-06-26 00:00:00+01:00  2.375     2.3572  0.9925     0.0000
+                           Close  Adj Close  Dividends
+2024-06-27 00:00:00+01:00  2.360     2.3600     0.0178
+2024-06-26 00:00:00+01:00  2.375     2.3572     0.0000
 ```
 
 #### Dividend too small
