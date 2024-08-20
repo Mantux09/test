@@ -17,3 +17,37 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 
 ----
 
+### Examples
+
+#### Dividend too big
+
+> HLCL.L
+
+```
+# ORIGINAL:
+                           Close  Adj Close     Adj  Dividends
+2024-06-27 00:00:00+01:00  2.360     2.3600  1.0000       1.78
+2024-06-26 00:00:00+01:00  2.375     2.3572  0.9925       0.00
+
+# REPAIRED:
+                           Close  Adj Close     Adj  Dividends
+2024-06-27 00:00:00+01:00  2.360     2.3600  1.0000     0.0178
+2024-06-26 00:00:00+01:00  2.375     2.3572  0.9925     0.0000
+```
+
+
+#### Adjusted 2x on day before (clue: Close < Low)
+
+> 2020.OL
+
+```
+                                  Low       Close   Adj Close  Dividends
+2023-12-21 00:00:00+01:00  120.199997  121.099998  118.868782       0.18
+2023-12-20 00:00:00+01:00  122.000000  121.900002  119.477371       0.00
+```
+
+```
+                                  Low       Close   Adj Close  Dividends
+2023-12-21 00:00:00+01:00  120.199997  121.099998  118.868782       0.18
+2023-12-20 00:00:00+01:00  122.000000  122.080002  119.654045       0.00
+```
