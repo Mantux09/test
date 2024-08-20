@@ -6,15 +6,14 @@ Fix errors in dividends:
 
 Almost all errors I've seen are on London stock exchange (£/pence mixup), but no exchange is safe.
 
-Because fixing (3) relies on price action, detection is best with 1d intervals - perfect AFAIK. Accuracy worsens with longer intervals - 1wk, 1mo - and also false positive rate is higher. So for accurate adjusted 1wk/1mo prices, first fetch 1d adjusted prices then resample:
+----
 
-```python
-df = dat.history(interval='1d', auto_adjust=True, ...)
-df.loc[df['Stock Splits']==0.0, 'Stock Splits'] = 1.0
-df_wk = df.resample('W').agg({
-    'Open': 'first', 'Low': 'min', 'High': 'max', 'Close': 'last',
-    'Volume': 'sum', 'Dividends': 'sum', 'Stock Splits': 'prod',
-    'Repaired?': 'any'
-    })
-df_wk.loc[df_wk['Stock Splits']==1.0, 'Stock Splits'] = 0.0
-```
+### IMPORTANT
+
+Because fixing (3) relies on price action, there is a chance of a "false positive" (FP) - thinking an error exists when data is good.
+FP rate increases with longer intervals, so only 1d intervals are repaired. If you request repair on multiday intervals (weekly etc), then: 1d is fetched from Yahoo, repaired, then resampled.
+
+FP rate on 1d is tiny. They tend to be mistaking normal price volatility for an ex-div drop 100x bigger than the dividend, so thinking the dividend is too small. Fetching 1-2 years of prices containing at least 3 dividends helps a lot - can analyse the dividends together to identify false positives.
+
+----
+
