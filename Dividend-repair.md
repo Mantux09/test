@@ -13,7 +13,7 @@ Almost all errors I've seen are on London stock exchange (£/pence mixup), but n
 Because fixing (3) relies on price action, there is a chance of a "false positive" (FP) - thinking an error exists when data is good.
 FP rate increases with longer intervals, so only 1d intervals are repaired. If you request repair on multiday intervals (weekly etc), then: 1d is fetched from Yahoo, repaired, then resampled. (This also solves Yahoo's flawed way of adjusting multiday)
 
-FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistaking normal price volatility for an ex-div drop 100x bigger than the dividend, causing repair of the "too small" dividend. Either accept the risk, or fetch 1-2 years of prices with at least 3 dividends - then can analyse the dividends together to identify false positives.
+FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistaking normal price volatility for an ex-div drop 100x bigger than the dividend, causing repair of the "too small" dividend. Either accept the risk, or fetch 6-12 months of prices with at least 2 dividends - then can analyse the dividends together to identify false positives.
 
 ----
 
