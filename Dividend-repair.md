@@ -31,7 +31,7 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 2023-05-08 00:00:00+02:00  66.379997  65.745682       0.00
 ```
 ```
-# REPARIED:
+# REPAIRED:
                                Close  Adj Close  Dividends
 2023-05-10 00:00:00+02:00  70.580002  70.352142       0.00
 2023-05-09 00:00:00+02:00  65.739998  65.527764       0.21
@@ -60,12 +60,14 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 > 2020.OL
 
 ```
+# ORIGINAL:
                                   Low       Close   Adj Close  Dividends
 2023-12-21 00:00:00+01:00  120.199997  121.099998  118.868782       0.18
 2023-12-20 00:00:00+01:00  122.000000  121.900002  119.477371       0.00
 ```
 
 ```
+# REPAIRED:
                                   Low       Close   Adj Close  Dividends
 2023-12-21 00:00:00+01:00  120.199997  121.099998  118.868782       0.18
 2023-12-20 00:00:00+01:00  122.000000  122.080002  119.654045       0.00
