@@ -17,7 +17,39 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 
 ----
 
-### Examples
+#### Adjustment missing
+
+> 1398.HK
+
+```
+# ORIGINAL:
+                           Close  Adj Close  Adj  Dividends
+2024-07-08 00:00:00+08:00   4.33       4.33  1.0   0.335715
+2024-07-04 00:00:00+08:00   4.83       4.83  1.0   0.000000
+```
+```
+# REPAIRED:
+                           Close  Adj Close     Adj  Dividends
+2024-07-08 00:00:00+08:00   4.33   4.330000  1.0000   0.335715
+2024-07-04 00:00:00+08:00   4.83   4.494285  0.9305   0.000000
+```
+
+#### Adjustment too small
+
+> 3IN.L
+
+```
+# ORIGINAL:
+                           Close  Adj Close     Adj  Dividends
+2024-06-13 00:00:00+01:00  3.185   3.185000  1.0000    0.05950
+2024-06-12 00:00:00+01:00  3.270   3.269405  0.9998    0.00000
+```
+```
+# REPAIRED:
+                           Close  Adj Close     Adj  Dividends
+2024-06-13 00:00:00+01:00  3.185   3.185000  1.0000    0.05950
+2024-06-12 00:00:00+01:00  3.270   3.210500  0.9818    0.00000
+```
 
 #### Duplicate
 
