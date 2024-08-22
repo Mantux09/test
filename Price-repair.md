@@ -4,7 +4,7 @@ The returned table will have a new column `Repaired?` that specifies if row was 
 
 # Price repair
 
-## Missing dividend adjustment
+### Missing dividend adjustment
 
 If dividend in data but preceding `Adj Close` = `Close`, then manually apply dividend-adjustment to `Adj Close`.
 
@@ -14,7 +14,7 @@ Note: `Repaired?` is NOT set to `True` because fix only changes `Adj Close`
 
 ![image](https://github.com/ranaroussi/yfinance/assets/96923577/5b0bb171-1846-41cc-a115-353e33d77a06)
 
-## Missing split adjustment
+### Missing split adjustment
 
 If stock split in data but preceding price data is not adjusted, then manually apply stock split.
 
@@ -24,7 +24,7 @@ Requires date range include 1 day after stock split, for calibration. Sometimes 
 
 ![image](https://github.com/ranaroussi/yfinance/assets/96923577/02670df6-d14a-4cac-a5e6-462bc9e55d37)
 
-## Missing data
+### Missing data
 
 If price data is clearly missing or corrupt, then reconstructed using smaller interval e.g. `1h` to fix `1d` data.
 
@@ -41,7 +41,7 @@ If price data is clearly missing or corrupt, then reconstructed using smaller in
 ![image](https://github.com/user-attachments/assets/b6085315-3236-4e79-a733-7a9466bb8ecc)
 
 
-## 100x errors
+### 100x errors
 
 Sometimes Yahoo mixes up currencies e.g. $/cents or £/pence. So some prices are 100x wrong. 
 
@@ -71,7 +71,7 @@ Most errors I've seen are on London stock exchange (£/pence mixup), but no exch
 ## 
 ***
 
-#### IMPORTANT - false positives
+### IMPORTANT - false positives
 
 Because fixing (3) relies on price action, there is a chance of a "false positive" (FP) - thinking an error exists when data is good.
 FP rate increases with longer intervals, so only 1d intervals are repaired. If you request repair on multiday intervals (weekly etc), then: 1d is fetched from Yahoo, repaired, then resampled - **this has nice side-effect of solving Yahoo's flawed way of div-adjusting multiday intervals.**
@@ -80,7 +80,7 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 
 ***
 
-## Adjustment missing
+### Adjustment missing
 
 > 1398.HK
 
@@ -97,7 +97,7 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 2024-07-04 00:00:00+08:00   4.83   4.494285   0.000000
 ```
 
-## Adjustment too small
+### Adjustment too small
 
 > 3IN.L
 
@@ -114,7 +114,7 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 2024-06-12 00:00:00+01:00  3.270   3.210500    0.00000
 ```
 
-## Duplicate (within 7 days)
+### Duplicate (within 7 days)
 
 > ALC.SW
 
@@ -133,7 +133,7 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 2023-05-08 00:00:00+02:00  66.379997  65.956371       0.00
 ```
 
-## Dividend too big
+### Dividend too big
 
 > HLCL.L
 
@@ -149,7 +149,7 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 2024-06-26 00:00:00+01:00  2.375     2.3572     0.0000
 ```
 
-## Dividend too small
+### Dividend too small
 
 > BVT.L
 
@@ -166,7 +166,7 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 2022-02-01 00:00:00+00:00  0.7844   0.702075  0.8950      0.000
 ```
 
-## Adjusted 2x on day before (clue: Close < Low)
+### Adjusted 2x on day before (clue: Close < Low)
 
 > 2020.OL
 
