@@ -149,6 +149,20 @@ FP rate on 1d is tiny. They tend to happen with tiny dividends e.g. 0.5%, mistak
 2024-06-26 00:00:00+01:00  2.375     2.3572     0.0000
 ```
 
+### Dividend & adjust too big
+
+> LTI.L
+
+```
+# ORIGINAL:
+                           Close  Adj Close     Adj  Dividends
+2024-08-08 00:00:00+01:00  768.0      768.0  1.0000     5150.0
+2024-08-07 00:00:00+01:00  819.0    -4331.0 -5.2882        0.0
+                           Close  Adj Close     Adj  Dividends
+2024-08-08 00:00:00+01:00  768.0      768.0  1.0000       51.5
+2024-08-07 00:00:00+01:00  819.0      767.5  0.9371        0.0
+```
+
 ### Dividend too small
 
 > BVT.L
