@@ -66,6 +66,7 @@ Fix errors in dividends:
 1. adjustment missing or 100x too small/big for the dividend
 2. duplicate dividend (within 7 days)
 3. dividend 100x too big/small for the ex-dividend price drop
+4. ex-div date wrong (price drop is few days/weeks after)
 
 Most errors I've seen are on London stock exchange (£/pence mixup), but no exchange is safe.
 ## 
